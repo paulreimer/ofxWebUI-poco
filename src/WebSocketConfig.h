@@ -1,0 +1,25 @@
+#pragma once
+
+#define WEBSOCKET_ACCEPT_ALL_CONNECTIONS true
+#define DEFAULT_WEBSOCKET_HOST		"localhost"
+#define DEFAULT_WEBSOCKET_PORT		12345
+#define DEFAULT_WEBSOCKET_PORT_STR	"12345"
+#define DEFAULT_WEBSOCKET_RESOURCE	"/"
+#define DEFAULT_WEBSOCKET_SERVICE	"ws://"DEFAULT_WEBSOCKET_HOST":"DEFAULT_WEBSOCKET_PORT_STR"/"DEFAULT_WEBSOCKET_RESOURCE
+#define DEFAULT_WEBSOCKET_ORIGIN	"http://localhost"
+#define DEFAULT_WEBSOCKET_PROTOCOL	""
+#define DEFAULT_WEBSOCKET_SECURE	false
+
+#define DEFAULT_WEBSOCKET_BUFFER_SIZE	1024
+
+#define CRLF						"\r\n"
+#define HANDSHAKE_TERMINATION		CRLF CRLF
+
+#define HANDSHAKE_PREAMBLE "\
+HTTP/1.1 101 WebSocket Protocol Handshake\r\n\
+Upgrade: WebSocket\r\n\
+Connection: Upgrade\r\n"
+
+#define WEBSOCKET_HEADER(header, value) "WebSocket-"header": "value"\r\n"
+
+#define UNSET -1
